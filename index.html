@@ -251,6 +251,13 @@
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/15/用path画一个抽象的树叶/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/15/用path画一个抽象的树叶/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -302,112 +309,13 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/15/PullBezierZoomView-一个具有贝塞尔曲线下拉效果的自定义view/" itemprop="url">
-                  PullBezierZoomView 一个具有贝塞尔曲线下拉效果的自定义view
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-15T17:48:00+08:00" content="2016-09-15">
-              2016-09-15
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>该控件具有下拉放大背景图和贝塞尔曲线的效果.</strong></p>
-<p>该控件效果基于<a href="https://github.com/Frank-Zhu/PullZoomView" target="_blank" rel="external">PullZoomView</a>源码改动的而来,感谢<strong>Frank-Zhu</strong>的开源代码.</p>
-<p><strong>github:</strong><a href="https://github.com/X-FAN/PullBezierZoomView" target="_blank" rel="external">https://github.com/X-FAN/PullBezierZoomView</a> 欢迎star</p>
-<p>我主要写了一个自定义贝塞尔曲线效果的控件并整合到了Frank-Zhu的项目中的一个子项中.</p>
-<p>这里面有个小数学知识的求解,因为效果要贝赛尔曲线的曲线顶点要恰好在控件底部边界的中点.所以我们是知道ABC三点,去求贝塞尔曲线的<strong>控制点</strong>.具体求解过程就不分析了,大家google二阶贝塞尔曲线的公式,很容易就可以推算出来.</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/768771-7d0d49dd5c922970?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
-<p>贝塞尔曲线效果控件源码如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BezierView</span> <span class="keyword">extends</span> <span class="title">View</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> mWidth = <span class="number">500</span>;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> mHeight = <span class="number">500</span>;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">float</span> mMaxHeight = Integer.MAX_VALUE;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">float</span> mY = <span class="number">0</span>;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Paint mPaint;</div><div class="line">    <span class="keyword">private</span> Path mPath;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">BezierView</span><span class="params">(Context context)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>(context, <span class="keyword">null</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">BezierView</span><span class="params">(Context context, AttributeSet attrs)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>(context, attrs, <span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">BezierView</span><span class="params">(Context context, AttributeSet attrs, <span class="keyword">int</span> defStyleAttr)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(context, attrs, defStyleAttr);</div><div class="line">        mPath = <span class="keyword">new</span> Path();</div><div class="line">        mPaint = <span class="keyword">new</span> Paint();</div><div class="line">        mPaint.setAntiAlias(<span class="keyword">true</span>);</div><div class="line">        mPaint.setColor(Color.WHITE);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onMeasure</span><span class="params">(<span class="keyword">int</span> widthMeasureSpec, <span class="keyword">int</span> heightMeasureSpec)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> widthMode = MeasureSpec.getMode(widthMeasureSpec);</div><div class="line">        <span class="keyword">int</span> widthSize = MeasureSpec.getSize(widthMeasureSpec);</div><div class="line">        <span class="keyword">int</span> heightMode = MeasureSpec.getMode(heightMeasureSpec);</div><div class="line">        <span class="keyword">int</span> heightSize = MeasureSpec.getSize(heightMeasureSpec);</div><div class="line">        <span class="keyword">int</span> width;</div><div class="line">        <span class="keyword">int</span> height;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (widthMode == MeasureSpec.EXACTLY) &#123;</div><div class="line">            width = widthSize;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (widthMode == MeasureSpec.AT_MOST) &#123;</div><div class="line">            width = Math.min(mWidth, widthSize);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            width = mWidth;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (heightMode == MeasureSpec.EXACTLY) &#123;</div><div class="line">            height = heightSize;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (heightMode == MeasureSpec.AT_MOST) &#123;</div><div class="line">            height = Math.min(mHeight, heightSize);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            height = mHeight;</div><div class="line">        &#125;</div><div class="line">        setMeasuredDimension(width, height);</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onSizeChanged</span><span class="params">(<span class="keyword">int</span> w, <span class="keyword">int</span> h, <span class="keyword">int</span> oldw, <span class="keyword">int</span> oldh)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onSizeChanged(w, h, oldw, oldh);</div><div class="line">        mWidth = w;</div><div class="line">        mHeight = h;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDraw</span><span class="params">(Canvas canvas)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onDraw(canvas);</div><div class="line">        mPath.reset();<span class="comment">//绘制的主要逻辑代码</span></div><div class="line">        mPath.moveTo(<span class="number">0</span>, mHeight - mY);</div><div class="line">        mPath.quadTo(mWidth / <span class="number">2</span>, mHeight + mY, mWidth, mHeight - mY);</div><div class="line">        mPath.lineTo(mWidth, mHeight);</div><div class="line">        mPath.lineTo(<span class="number">0</span>, mHeight);</div><div class="line">        mPath.close();</div><div class="line">        canvas.drawPath(mPath, mPaint);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setArcHeight</span><span class="params">(<span class="keyword">float</span> height)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (Math.abs(height) &lt; mMaxHeight) &#123;</div><div class="line">            mY = height;</div><div class="line">            invalidate();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">getArcHeight</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> mY;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setColor</span><span class="params">(<span class="keyword">int</span> color)</span> </span>&#123;</div><div class="line">        mPaint.setColor(color);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMaxHeight</span><span class="params">(<span class="keyword">float</span> height)</span> </span>&#123;</div><div class="line">        mMaxHeight = height;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<p>这里提下Frank-Zhu的项目中放大缩小功能的实现是相当的聪明,看了源码发现他是利用ImagView中的<strong>scaleType=”centerCrop”</strong>属性,只要改变控件的高度,就具有了放大缩小的效果.不用自己写额外的代码,确实很方便.</p>
-<p><strong>效果图:</strong></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/768771-a196d8ff10569615.gif?imageMogr2/auto-orient/strip" alt="bezier.gif"></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -577,13 +485,34 @@
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"sherlockcat"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
 
 
 
+
+
   
   
 
@@ -592,6 +521,9 @@
   
 
   
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
 
 </body>
 </html>
