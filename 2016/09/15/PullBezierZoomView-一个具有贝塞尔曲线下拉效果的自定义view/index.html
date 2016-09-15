@@ -1,11 +1,103 @@
-<!DOCTYPE html><html lang="zh-Hans"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="We are all in the gutter, but some of us are looking at the stars."><title>PullBezierZoomView 一个具有贝塞尔曲线下拉效果的自定义view | 夏洛克的猫</title><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/4.2.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/grids-responsive-min.css"><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">PullBezierZoomView 一个具有贝塞尔曲线下拉效果的自定义view</h1><a id="logo" href="/.">夏洛克的猫</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> Home</i></a><a href="/archives/"><i class="fa fa-archive"> Archive</i></a><a href="/about/"><i class="fa fa-user"> About</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">PullBezierZoomView 一个具有贝塞尔曲线下拉效果的自定义view</h1><div class="post-meta">Sep 15, 2016<script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> Hits</span></span></div><div class="post-content"><p><strong>该控件具有下拉放大背景图和贝塞尔曲线的效果.</strong></p>
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="theme-color" content="#33474d">
+	<title>PullBezierZoomView 一个具有贝塞尔曲线下拉效果的自定义view | 夏洛克的猫</title>
+	<link rel="stylesheet" href="/css/style.css" />
+	
+      <link rel="alternate" href="/atom.xml" title="夏洛克的猫" type="application/atom+xml">
+    
+</head>
+
+<body>
+
+	<header class="header">
+		<nav class="header__nav">
+			
+				<a href="/archives" class="header__link">Archive</a>
+			
+				<a href="/tags" class="header__link">Tags</a>
+			
+				<a href="/atom.xml" class="header__link">RSS</a>
+			
+		</nav>
+		<h1 class="header__title"><a href="/">夏洛克的猫</a></h1>
+		<h2 class="header__subtitle"></h2>
+	</header>
+
+	<main>
+		<article>
+	
+		<h1>PullBezierZoomView 一个具有贝塞尔曲线下拉效果的自定义view</h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2016-09-15</span><br />
+		
+		
+	</div>
+
+	
+
+	
+		<p><strong>该控件具有下拉放大背景图和贝塞尔曲线的效果.</strong></p>
 <p>该控件效果基于<a href="https://github.com/Frank-Zhu/PullZoomView" target="_blank" rel="external">PullZoomView</a>源码改动的而来,感谢<strong>Frank-Zhu</strong>的开源代码.</p>
 <p><strong>github:</strong><a href="https://github.com/X-FAN/PullBezierZoomView" target="_blank" rel="external">https://github.com/X-FAN/PullBezierZoomView</a> 欢迎star</p>
 <p>我主要写了一个自定义贝塞尔曲线效果的控件并整合到了Frank-Zhu的项目中的一个子项中.</p>
 <p>这里面有个小数学知识的求解,因为效果要贝赛尔曲线的曲线顶点要恰好在控件底部边界的中点.所以我们是知道ABC三点,去求贝塞尔曲线的<strong>控制点</strong>.具体求解过程就不分析了,大家google二阶贝塞尔曲线的公式,很容易就可以推算出来.</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/768771-7d0d49dd5c922970?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p><figure class="figure"><img src="http://upload-images.jianshu.io/upload_images/768771-7d0d49dd5c922970?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"><figcaption class="figure__caption">这里写图片描述</figcaption></figure></p>
 <p>贝塞尔曲线效果控件源码如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BezierView</span> <span class="keyword">extends</span> <span class="title">View</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> mWidth = <span class="number">500</span>;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> mHeight = <span class="number">500</span>;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">float</span> mMaxHeight = Integer.MAX_VALUE;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">float</span> mY = <span class="number">0</span>;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Paint mPaint;</div><div class="line">    <span class="keyword">private</span> Path mPath;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">BezierView</span><span class="params">(Context context)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>(context, <span class="keyword">null</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">BezierView</span><span class="params">(Context context, AttributeSet attrs)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>(context, attrs, <span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">BezierView</span><span class="params">(Context context, AttributeSet attrs, <span class="keyword">int</span> defStyleAttr)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(context, attrs, defStyleAttr);</div><div class="line">        mPath = <span class="keyword">new</span> Path();</div><div class="line">        mPaint = <span class="keyword">new</span> Paint();</div><div class="line">        mPaint.setAntiAlias(<span class="keyword">true</span>);</div><div class="line">        mPaint.setColor(Color.WHITE);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onMeasure</span><span class="params">(<span class="keyword">int</span> widthMeasureSpec, <span class="keyword">int</span> heightMeasureSpec)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> widthMode = MeasureSpec.getMode(widthMeasureSpec);</div><div class="line">        <span class="keyword">int</span> widthSize = MeasureSpec.getSize(widthMeasureSpec);</div><div class="line">        <span class="keyword">int</span> heightMode = MeasureSpec.getMode(heightMeasureSpec);</div><div class="line">        <span class="keyword">int</span> heightSize = MeasureSpec.getSize(heightMeasureSpec);</div><div class="line">        <span class="keyword">int</span> width;</div><div class="line">        <span class="keyword">int</span> height;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (widthMode == MeasureSpec.EXACTLY) &#123;</div><div class="line">            width = widthSize;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (widthMode == MeasureSpec.AT_MOST) &#123;</div><div class="line">            width = Math.min(mWidth, widthSize);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            width = mWidth;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (heightMode == MeasureSpec.EXACTLY) &#123;</div><div class="line">            height = heightSize;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (heightMode == MeasureSpec.AT_MOST) &#123;</div><div class="line">            height = Math.min(mHeight, heightSize);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            height = mHeight;</div><div class="line">        &#125;</div><div class="line">        setMeasuredDimension(width, height);</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onSizeChanged</span><span class="params">(<span class="keyword">int</span> w, <span class="keyword">int</span> h, <span class="keyword">int</span> oldw, <span class="keyword">int</span> oldh)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onSizeChanged(w, h, oldw, oldh);</div><div class="line">        mWidth = w;</div><div class="line">        mHeight = h;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDraw</span><span class="params">(Canvas canvas)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onDraw(canvas);</div><div class="line">        mPath.reset();<span class="comment">//绘制的主要逻辑代码</span></div><div class="line">        mPath.moveTo(<span class="number">0</span>, mHeight - mY);</div><div class="line">        mPath.quadTo(mWidth / <span class="number">2</span>, mHeight + mY, mWidth, mHeight - mY);</div><div class="line">        mPath.lineTo(mWidth, mHeight);</div><div class="line">        mPath.lineTo(<span class="number">0</span>, mHeight);</div><div class="line">        mPath.close();</div><div class="line">        canvas.drawPath(mPath, mPaint);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setArcHeight</span><span class="params">(<span class="keyword">float</span> height)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (Math.abs(height) &lt; mMaxHeight) &#123;</div><div class="line">            mY = height;</div><div class="line">            invalidate();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">getArcHeight</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> mY;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setColor</span><span class="params">(<span class="keyword">int</span> color)</span> </span>&#123;</div><div class="line">        mPaint.setColor(color);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMaxHeight</span><span class="params">(<span class="keyword">float</span> height)</span> </span>&#123;</div><div class="line">        mMaxHeight = height;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
 <p>这里提下Frank-Zhu的项目中放大缩小功能的实现是相当的聪明,看了源码发现他是利用ImagView中的<strong>scaleType=”centerCrop”</strong>属性,只要改变控件的高度,就具有了放大缩小的效果.不用自己写额外的代码,确实很方便.</p>
 <p><strong>效果图:</strong></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/768771-a196d8ff10569615.gif?imageMogr2/auto-orient/strip" alt="bezier.gif"></p>
-</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="http://yoursite.com/2016/09/15/PullBezierZoomView-一个具有贝塞尔曲线下拉效果的自定义view/" data-id="cit4hq3zh0000e8r4l3v9n8wv" class="article-share-link">Share</a><div class="tags"></div><div class="post-nav"><a href="/2016/09/15/用path画一个抽象的树叶/" class="pre">用path画一个抽象的树叶</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://yoursite.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> Categories</i></div></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> Tags</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> Recent</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/09/15/用path画一个抽象的树叶/">用path画一个抽象的树叶</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/15/PullBezierZoomView-一个具有贝塞尔曲线下拉效果的自定义view/">PullBezierZoomView 一个具有贝塞尔曲线下拉效果的自定义view</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> Blogroll</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">© <a href="/." rel="nofollow">夏洛克的猫.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css?v=0.0.0"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
+<p><figure class="figure"><img src="http://upload-images.jianshu.io/upload_images/768771-a196d8ff10569615.gif?imageMogr2/auto-orient/strip" alt="bezier.gif"><figcaption class="figure__caption">bezier.gif</figcaption></figure></p>
+
+	
+
+	
+		<span class="different-posts"><a href="/2016/09/15/PullBezierZoomView-一个具有贝塞尔曲线下拉效果的自定义view/" onclick="window.history.go(-1); return false;">⬅️ Go back </a></span>
+
+	
+
+</article>
+
+	</main>
+
+	<footer class="footer">
+	<div class="footer-content">
+		
+	      <div class="footer__element">
+	<p>Hi there, <br />welcome to my Blog glad you found it. Have a look around, will you?</p>
+</div>
+
+	    
+	      <div class="footer__element">
+	<h5>Check out</h5>
+	<ul class="footer-links">
+		<li class="footer-links__link"><a href="/archives">Archive</a></li>
+		
+		  <li class="footer-links__link"><a href="/atom.xml">RSS</a></li>
+	    
+		<li class="footer-links__link"><a href="/about">about page</a></li>
+		<li class="footer-links__link"><a href="/tags">Tags</a></li>
+		<li class="footer-links__link"><a href="/categories">Categories</a></li>
+	</ul>
+</div>
+
+	    
+
+		<div class="footer-credit">
+			<span>© 2016 夏洛克的猫 | Powered by <a href="https://hexo.io/">Hexo</a> | Theme <a href="https://github.com/HoverBaum/meilidu-hexo">MeiliDu</a></span>
+		</div>
+
+	</div>
+
+
+</footer>
+
+
+
+</body>
+
+</html>
