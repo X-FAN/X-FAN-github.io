@@ -84,15 +84,25 @@
 
 
 
-<meta name="description" content="We are all in the gutter, but some of us are looking at the stars.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="夏洛克的猫">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="以前写布局时为了观看布局效果,会写些静态的测试数据,以便在androidstudio中观察布局的效果.等到写完布局的时候在进行擦除.当布局很多的时候,这确实也是很费劲的事.其实官方早就为我们考虑到这点了.我们在实际开发中可以使用tools.tools可以覆盖我们的属性,但是运行时这些属性是被忽略的
+如:
+123456789101112131415161718192021222324&amp;lt;?xml">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小trick之tools">
+<meta property="og:url" content="http://yoursite.com/2016/09/16/小trick之tools/index.html">
 <meta property="og:site_name" content="夏洛克的猫">
-<meta property="og:description" content="We are all in the gutter, but some of us are looking at the stars.">
+<meta property="og:description" content="以前写布局时为了观看布局效果,会写些静态的测试数据,以便在androidstudio中观察布局的效果.等到写完布局的时候在进行擦除.当布局很多的时候,这确实也是很费劲的事.其实官方早就为我们考虑到这点了.我们在实际开发中可以使用tools.tools可以覆盖我们的属性,但是运行时这些属性是被忽略的
+如:
+123456789101112131415161718192021222324&amp;lt;?xml">
+<meta property="og:image" content="http://img.blog.csdn.net/20160904164107029">
+<meta property="og:image" content="http://img.blog.csdn.net/20160904170832787">
+<meta property="og:updated_time" content="2016-09-16T01:16:03.461Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="夏洛克的猫">
-<meta name="twitter:description" content="We are all in the gutter, but some of us are looking at the stars.">
+<meta name="twitter:title" content="小trick之tools">
+<meta name="twitter:description" content="以前写布局时为了观看布局效果,会写些静态的测试数据,以便在androidstudio中观察布局的效果.等到写完布局的时候在进行擦除.当布局很多的时候,这确实也是很费劲的事.其实官方早就为我们考虑到这点了.我们在实际开发中可以使用tools.tools可以覆盖我们的属性,但是运行时这些属性是被忽略的
+如:
+123456789101112131415161718192021222324&amp;lt;?xml">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20160904164107029">
 
 
 
@@ -113,9 +123,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/09/16/小trick之tools/"/>
 
-  <title> 夏洛克的猫 </title>
+  <title> 小trick之tools | 夏洛克的猫 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,9 +146,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -215,9 +223,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -237,10 +245,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/09/16/小trick之tools/" itemprop="url">
-                  小trick之tools
-                </a>
+                小trick之tools
               
             
           </h1>
@@ -296,25 +301,27 @@
       
 
       
-        
-          
-            <p>以前写布局时为了观看布局效果,会写些静态的测试数据,以便在androidstudio中观察布局的效果.等到写完布局的时候在进行擦除.当布局很多的时候,这确实也是很费劲的事.其实官方早就为我们考虑到这点了.<br>我们在实际开发中可以使用<strong>tools</strong>.<br><strong>tools可以覆盖我们的属性,但是运行时这些属性是被忽略的</strong></p>
+        <p>以前写布局时为了观看布局效果,会写些静态的测试数据,以便在androidstudio中观察布局的效果.等到写完布局的时候在进行擦除.当布局很多的时候,这确实也是很费劲的事.其实官方早就为我们考虑到这点了.<br>我们在实际开发中可以使用<strong>tools</strong>.<br><strong>tools可以覆盖我们的属性,但是运行时这些属性是被忽略的</strong></p>
 <p>如:</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:gravity</span>=<span class="string">"center_horizontal"</span></div><div class="line">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span></div><div class="line">    <span class="attr">tools:context</span>=<span class="string">"com.xf.mylab.activity.AniTestActivity"</span>&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">Button</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/start"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:text</span>=<span class="string">"start"</span></div><div class="line">        <span class="attr">tools:text</span>=<span class="string">"TEST"</span>/&gt;<span class="comment">&lt;!--tools的属性会直接在编辑中看到效果,而在不会在运行时起效果--&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">Button</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/end"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:text</span>=<span class="string">"end"</span></div><div class="line">        <span class="attr">tools:text</span>=<span class="string">"TEST"</span>/&gt;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><strong>as中预览的效果:</strong><br><img src="http://img.blog.csdn.net/20160904164107029" alt="**这里写图片描述**"></p>
 <p><strong>实际运行时的效果:</strong><br><img src="http://img.blog.csdn.net/20160904170832787" alt="这里写图片描述"></p>
 <p> tools对其他的属性都是支持的,实际运用时只要把<strong>android:</strong>替换成<strong>tools:</strong>即可,不需要手动擦除,这对提高我们工作效率还是有帮助的.</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
@@ -322,244 +329,51 @@
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/09/15/用path画一个抽象的树叶/" rel="next" title="用path画一个抽象的树叶">
+                <i class="fa fa-chevron-left"></i> 用path画一个抽象的树叶
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/09/15/用path画一个抽象的树叶/" itemprop="url">
-                  用path画一个抽象的树叶
-                </a>
-              
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-15T21:43:24+08:00" content="2016-09-15">
-              2016-09-15
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/15/用path画一个抽象的树叶/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/15/用path画一个抽象的树叶/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/09/15/用path画一个抽象的树叶/" class="leancloud_visitors" data-flag-title="用path画一个抽象的树叶">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>源码地址:<a href="https://github.com/X-FAN/LeafView">https://github.com/X-FAN/LeafView</a><br>只是个简单的demo,大家可以参考下</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/15/用path画一个抽象的树叶/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
+
+    <div class="post-spread">
       
+        <div class="ds-share flat" data-thread-key="2016/09/16/小trick之tools/"
+     data-title="小trick之tools"
+     data-content=""
+     data-url="http://yoursite.com/2016/09/16/小trick之tools/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
 
-  
-  
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
 
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/15/PullBezierZoomView-一个具有贝塞尔曲线下拉效果的自定义view/" itemprop="url">
-                  PullBezierZoomView 一个具有贝塞尔曲线下拉效果的自定义view
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-15T17:48:00+08:00" content="2016-09-15">
-              2016-09-15
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/15/PullBezierZoomView-一个具有贝塞尔曲线下拉效果的自定义view/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/15/PullBezierZoomView-一个具有贝塞尔曲线下拉效果的自定义view/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/09/15/PullBezierZoomView-一个具有贝塞尔曲线下拉效果的自定义view/" class="leancloud_visitors" data-flag-title="PullBezierZoomView 一个具有贝塞尔曲线下拉效果的自定义view">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><strong>该控件具有下拉放大背景图和贝塞尔曲线的效果.</strong></p>
-<p>该控件效果基于<a href="https://github.com/Frank-Zhu/PullZoomView">PullZoomView</a>源码改动的而来,感谢<strong>Frank-Zhu</strong>的开源代码.<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/15/PullBezierZoomView-一个具有贝塞尔曲线下拉效果的自定义view/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
@@ -567,6 +381,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/16/小trick之tools/"
+           data-title="小trick之tools" data-url="http://yoursite.com/2016/09/16/小trick之tools/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -586,8 +408,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -623,6 +454,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -719,6 +561,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
