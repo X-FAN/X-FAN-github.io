@@ -85,25 +85,19 @@
 
 
 <meta name="description" content="大多数情况下我们一般用WebView去加载一个界面就行了,但是有时候你想要进行post请求,比如你抓取到提交参数,想模拟一些pc端浏览器的请求,比如12306火车票.那要怎么做呢?
-抓取的参数如下:
-
-代码类似于下面:12345678910111213StringBuilder builder1 = new StringBuilder();try &amp;#123;//拼接post提交参数  build">
+抓取的参数如下:">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WebView进行post请求">
 <meta property="og:url" content="http://yoursite.com/2016/09/16/WebView进行post请求/index.html">
 <meta property="og:site_name" content="夏洛克的猫">
 <meta property="og:description" content="大多数情况下我们一般用WebView去加载一个界面就行了,但是有时候你想要进行post请求,比如你抓取到提交参数,想模拟一些pc端浏览器的请求,比如12306火车票.那要怎么做呢?
-抓取的参数如下:
-
-代码类似于下面:12345678910111213StringBuilder builder1 = new StringBuilder();try &amp;#123;//拼接post提交参数  build">
+抓取的参数如下:">
 <meta property="og:image" content="http://img.blog.csdn.net/20160802110658225">
-<meta property="og:updated_time" content="2016-09-16T14:09:38.372Z">
+<meta property="og:updated_time" content="2016-09-16T14:17:54.151Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WebView进行post请求">
 <meta name="twitter:description" content="大多数情况下我们一般用WebView去加载一个界面就行了,但是有时候你想要进行post请求,比如你抓取到提交参数,想模拟一些pc端浏览器的请求,比如12306火车票.那要怎么做呢?
-抓取的参数如下:
-
-代码类似于下面:12345678910111213StringBuilder builder1 = new StringBuilder();try &amp;#123;//拼接post提交参数  build">
+抓取的参数如下:">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20160802110658225">
 
 
@@ -304,8 +298,7 @@
 
       
         <p>大多数情况下我们一般用WebView去加载一个界面就行了,但是有时候你想要进行post请求,比如你抓取到提交参数,想模拟一些pc端浏览器的请求,比如12306火车票.那要怎么做呢?</p>
-<p>抓取的参数如下:</p>
-<p><img src="http://img.blog.csdn.net/20160802110658225" alt="这里写图片描述"></p>
+<p>抓取的参数如下:<br><a id="more"></a><br><img src="http://img.blog.csdn.net/20160802110658225" alt="这里写图片描述"></p>
 <p>代码类似于下面:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">StringBuilder builder1 = <span class="keyword">new</span> StringBuilder();</div><div class="line"><span class="keyword">try</span> &#123;<span class="comment">//拼接post提交参数</span></div><div class="line">  builder1.append(<span class="string">"interfaceName="</span>).append(params.get(<span class="string">"interfaceName"</span>)).append(<span class="string">"&amp;"</span>)</div><div class="line">          .append(<span class="string">"interfaceVersion="</span>).append(params.get(<span class="string">"interfaceVersion"</span>)).append(<span class="string">"&amp;"</span>)</div><div class="line">          .append(<span class="string">"tranData="</span>).append(URLEncoder.encode(params.get(<span class="string">"tranData"</span>), <span class="string">"UTF-8"</span>)).append(<span class="string">"&amp;"</span>)</div><div class="line">          .append(<span class="string">"merSignMsg="</span>).append(URLEncoder.encode(params.get(<span class="string">"merSignMsg"</span>), <span class="string">"UTF-8"</span>)).append(<span class="string">"&amp;"</span>)</div><div class="line">          .append(<span class="string">"appId="</span>).append(params.get(<span class="string">"appId"</span>)).append(<span class="string">"&amp;"</span>)</div><div class="line">          .append(<span class="string">"transType="</span>).append(params.get(<span class="string">"transType"</span>));</div><div class="line">  &#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</div><div class="line">    e.printStackTrace();</div><div class="line">&#125;</div><div class="line">String postData = builder1.toString();</div><div class="line">webview.postUrl(url(请求地址), EncodingUtils.getBytes(postData, <span class="string">"UTF-8"</span>));</div></pre></td></tr></table></figure></p>
 <p>有个小坑这里提下,可能是和URL地址规范问题有关,URLEncoder会把空格变成加号但是有些后端是不支持的需要做处理,我这里再次encode会把”+”变成%2B.因为这里没有其他特殊字符,如果有再次encode可能是有问题.大家保险的话还是将”+”用其他方式变为%2B.</p>
 <p>大家具体情况具体分析,服务端的情况毕竟是未知的.</p>
