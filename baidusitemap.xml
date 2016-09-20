@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/09/20/%E4%BB%BFgoogleMVP%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%A4%BA%E4%BE%8Bdemo-%E7%BB%93%E5%90%88rxjava-retrofit2-0/</loc>
+    <lastmod>2016-09-20T14:00:03.255Z</lastmod>
+    <data>
+        <display>
+        <title>仿googleMVP设计模式示例demo,结合rxjava,retrofit2.0</title>
+        <pubTime>2016-09-20T13:58:50.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/09/18/FruitLoadView-%E4%B8%80%E4%B8%AA%E8%87%AA%E5%AE%9A%E4%B9%89view%E5%8F%AF%E7%94%A8%E6%9D%A5%E5%81%9A%E5%8A%A0%E8%BD%BDview/</loc>
+    <lastmod>2016-09-18T13:03:19.938Z</lastmod>
+    <data>
+        <display>
+        <title>FruitLoadView 一个自定义view可用来做加载view</title>
+        <pubTime>2016-09-18T12:40:27.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/09/16/ZoomLoadView-%E8%87%AA%E5%AE%9A%E4%B9%89view-%E5%8F%AF%E4%BB%A5%E5%81%9Aapp%E7%9A%84%E5%90%AF%E5%8A%A8%E9%A6%96%E9%A1%B5%E6%95%88%E6%9E%9C/</loc>
+    <lastmod>2016-09-16T14:19:26.083Z</lastmod>
+    <data>
+        <display>
+        <title>ZoomLoadView 自定义view 可以做app的启动首页效果</title>
+        <pubTime>2016-09-16T14:03:17.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/09/16/WebView%E8%BF%9B%E8%A1%8Cpost%E8%AF%B7%E6%B1%82/</loc>
+    <lastmod>2016-09-16T14:19:17.339Z</lastmod>
+    <data>
+        <display>
+        <title>WebView进行post请求</title>
+        <pubTime>2016-09-16T14:08:41.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/09/16/%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84ReactNative-demo/</loc>
+    <lastmod>2016-09-16T05:04:51.546Z</lastmod>
+    <data>
+        <display>
+        <title>一个简单的ReactNative demo</title>
+        <pubTime>2016-09-16T05:00:08.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/09/16/%E5%B0%8Ftrick%E4%B9%8Btools/</loc>
+    <lastmod>2016-09-16T01:18:01.616Z</lastmod>
+    <data>
+        <display>
+        <title>小trick之tools</title>
+        <pubTime>2016-09-16T01:14:08.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/09/15/PullBezierZoomView-%E4%B8%80%E4%B8%AA%E5%85%B7%E6%9C%89%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF%E4%B8%8B%E6%8B%89%E6%95%88%E6%9E%9C%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89view/</loc>
+    <lastmod>2016-09-16T01:10:25.585Z</lastmod>
+    <data>
+        <display>
+        <title>PullBezierZoomView 一个具有贝塞尔曲线下拉效果的自定义view</title>
+        <pubTime>2016-09-15T09:48:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/09/15/%E7%94%A8path%E7%94%BB%E4%B8%80%E4%B8%AA%E6%8A%BD%E8%B1%A1%E7%9A%84%E6%A0%91%E5%8F%B6/</loc>
+    <lastmod>2016-09-15T17:04:14.626Z</lastmod>
+    <data>
+        <display>
+        <title>用path画一个抽象的树叶</title>
+        <pubTime>2016-09-15T13:43:24.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+</urlset>
