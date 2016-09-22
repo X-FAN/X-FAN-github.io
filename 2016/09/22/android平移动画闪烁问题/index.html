@@ -69,7 +69,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="平移动画," />
 
 
 
@@ -85,15 +85,16 @@
 
 
 
-<meta name="description" content="We are all in the gutter, but some of us are looking at the stars.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="夏洛克的猫">
-<meta property="og:url" content="https://x-fan.github.io/index.html">
+<meta name="description" content="当我们应用android平移动画时,一般会给动画一个监听,当动画结束时,会将view的位置重新绘制到我们想要的位置,因为平移动画并没与真的改变控件的实际位置.代码如下:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="android平移动画闪烁问题">
+<meta property="og:url" content="https://x-fan.github.io/2016/09/22/android平移动画闪烁问题/index.html">
 <meta property="og:site_name" content="夏洛克的猫">
-<meta property="og:description" content="We are all in the gutter, but some of us are looking at the stars.">
+<meta property="og:description" content="当我们应用android平移动画时,一般会给动画一个监听,当动画结束时,会将view的位置重新绘制到我们想要的位置,因为平移动画并没与真的改变控件的实际位置.代码如下:">
+<meta property="og:updated_time" content="2016-09-22T13:53:00.290Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="夏洛克的猫">
-<meta name="twitter:description" content="We are all in the gutter, but some of us are looking at the stars.">
+<meta name="twitter:title" content="android平移动画闪烁问题">
+<meta name="twitter:description" content="当我们应用android平移动画时,一般会给动画一个监听,当动画结束时,会将view的位置重新绘制到我们想要的位置,因为平移动画并没与真的改变控件的实际位置.代码如下:">
 
 
 
@@ -114,9 +115,9 @@
 
 
 
-  <link rel="canonical" href="https://x-fan.github.io/"/>
+  <link rel="canonical" href="https://x-fan.github.io/2016/09/22/android平移动画闪烁问题/"/>
 
-  <title> 夏洛克的猫 </title>
+  <title> android平移动画闪烁问题 | 夏洛克的猫 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -137,9 +138,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -216,9 +215,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -238,10 +237,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/09/22/android平移动画闪烁问题/" itemprop="url">
-                  android平移动画闪烁问题
-                </a>
+                android平移动画闪烁问题
               
             
           </h1>
@@ -297,498 +293,101 @@
       
 
       
-        
-          <p>当我们应用android平移动画时,一般会给动画一个监听,当动画结束时,会将view的位置重新绘制到我们想要的位置,因为平移动画并没与真的改变控件的实际位置.<br>代码如下:<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/22/android平移动画闪烁问题/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
+        <p>当我们应用android平移动画时,一般会给动画一个监听,当动画结束时,会将view的位置重新绘制到我们想要的位置,因为平移动画并没与真的改变控件的实际位置.<br>代码如下:<br><a id="more"></a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">Animation animation = <span class="keyword">new</span> TranslateAnimation(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, -mTop);</div><div class="line">animation.setDuration(ANI_TIME);</div><div class="line">animation.setAnimationListener(<span class="keyword">new</span> Animation.AnimationListener() &#123;</div><div class="line">                              <span class="meta">@Override</span></div><div class="line">                              <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationStart</span><span class="params">(Animation animation)</span> </span>&#123;</div><div class="line"></div><div class="line">                              &#125;</div><div class="line"></div><div class="line">                              <span class="meta">@Override</span></div><div class="line">                              <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationEnd</span><span class="params">(Animation animation)</span> </span>&#123;</div><div class="line">                                   <span class="comment">//动画结束后更新view到终点位置</span></div><div class="line">                                   mTopView.layout(left, top, right, bottom);</div><div class="line">                              &#125;</div><div class="line"></div><div class="line"></div><div class="line">                              <span class="meta">@Override</span></div><div class="line">                              <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationRepeat</span><span class="params">(Animation animation)</span> </span>&#123;</div><div class="line"></div><div class="line">                              &#125;</div><div class="line">                          &#125;);</div><div class="line">mTopView.startAnimation(animation);</div></pre></td></tr></table></figure></p>
+<p>但是实际使用的时候,当更新实际位置的时候,view会有跳动,在stackoverflow中有人贴出了解决方案<br>代码如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">Animation animation = <span class="keyword">new</span> TranslateAnimation(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, -mTop);</div><div class="line">animation.setDuration(ANI_TIME);</div><div class="line">animation.setAnimationListener(<span class="keyword">new</span> Animation.AnimationListener() &#123;</div><div class="line">                              <span class="meta">@Override</span></div><div class="line">                              <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationStart</span><span class="params">(Animation animation)</span> </span>&#123;</div><div class="line"></div><div class="line">                              &#125;</div><div class="line"></div><div class="line">                              <span class="meta">@Override</span></div><div class="line">                              <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationEnd</span><span class="params">(Animation animation)</span> </span>&#123;</div><div class="line">   </div><div class="line">   <span class="comment">//防止跳动                            </span></div><div class="line">  TranslateAnimation animation = <span class="keyword">new</span> TranslateAnimation(<span class="number">0.0f</span>, <span class="number">0.0f</span>, <span class="number">0.0f</span>, <span class="number">0.0f</span>);</div><div class="line">  animation.setDuration(<span class="number">1</span>);</div><div class="line">  mTopView.startAnimation(animation);</div><div class="line">                                   <span class="comment">//动画结束后更新view到终点位置</span></div><div class="line">                                   mTopView.layout(left, top, right, bottom);</div><div class="line">                              &#125;</div><div class="line"></div><div class="line"></div><div class="line">                              <span class="meta">@Override</span></div><div class="line">                              <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationRepeat</span><span class="params">(Animation animation)</span> </span>&#123;</div><div class="line"></div><div class="line">                              &#125;</div><div class="line">                          &#125;);</div><div class="line">mTopView.startAnimation(animation);</div></pre></td></tr></table></figure>
+<p>在实际写的时候,偶然发现另一种方式也是有效的,不过这种有点违反直觉,就是倒着写动画,先把view更新到终点位置,代码如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//由于更新到终点位置,坐标参考以终点为参考系</span></div><div class="line">Animation animation = <span class="keyword">new</span> TranslateAnimation(<span class="number">0</span>, <span class="number">0</span>, mTop, <span class="number">0</span>);</div><div class="line">animation.setDuration(ANI_TIME);</div><div class="line">mTopView.startAnimation(animation);</div><div class="line"><span class="comment">//更新到终点位置</span></div><div class="line">mTopView.layout(left, top, right, bottom);</div></pre></td></tr></table></figure>
+<p>但是,为何出现view跳动的原因一直没找到分析的文章,若有人知道望请告知.</p>
+
       
     </div>
 
     <div>
       
+        
+
+      
     </div>
 
     <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay-reward-image.jpg" alt="夏洛克的猫 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/21/AutoScrollTopBottomView/" itemprop="url">
-                  AutoScrollTopBottomView
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-21T20:02:06+08:00" content="2016-09-21">
-              2016-09-21
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/21/AutoScrollTopBottomView/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/21/AutoScrollTopBottomView/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/09/21/AutoScrollTopBottomView/" class="leancloud_visitors" data-flag-title="AutoScrollTopBottomView">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
+            <a href="/tags/平移动画/" rel="tag">#平移动画</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>这个自定义控件是用来展示底层view的,当顶层的view滑动到底层view的中间时,顶层view会自动滚动到底层view的顶部或者底部,顶层view可以是scrollview,listview等. 希望对大家有帮助.</p>
-<p>github地址:<a href="https://github.com/X-FAN/AutoScrollTopBottomView">https://github.com/X-FAN/AutoScrollTopBottomView</a> 欢迎star<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/21/AutoScrollTopBottomView/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/21/AutoScrollTopBottomView/" rel="next" title="AutoScrollTopBottomView">
+                <i class="fa fa-chevron-left"></i> AutoScrollTopBottomView
+              </a>
+            
           </div>
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/20/仿googleMVP设计模式示例demo-结合rxjava-retrofit2-0/" itemprop="url">
-                  仿googleMVP设计模式示例demo,结合rxjava,retrofit2.0
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-20T21:58:50+08:00" content="2016-09-20">
-              2016-09-20
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/20/仿googleMVP设计模式示例demo-结合rxjava-retrofit2-0/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/20/仿googleMVP设计模式示例demo-结合rxjava-retrofit2-0/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/09/20/仿googleMVP设计模式示例demo-结合rxjava-retrofit2-0/" class="leancloud_visitors" data-flag-title="仿googleMVP设计模式示例demo,结合rxjava,retrofit2.0">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>这是模仿Google官方mvp示例的小demo,结合Retrofit2.0,rxjava加上自己的一点理解所写. 感谢干货免费开放的API.</p>
-<p>github地址:<a href="https://github.com/X-FAN/GankAPP">https://github.com/X-FAN/GankAPP</a> 欢迎大家star.<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/20/仿googleMVP设计模式示例demo-结合rxjava-retrofit2-0/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
+
+    <div class="post-spread">
       
+        <div class="ds-share flat" data-thread-key="2016/09/22/android平移动画闪烁问题/"
+     data-title="android平移动画闪烁问题"
+     data-content=""
+     data-url="https://x-fan.github.io/2016/09/22/android平移动画闪烁问题/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
 
-  
-  
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
 
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/18/FruitLoadView-一个自定义view可用来做加载view/" itemprop="url">
-                  FruitLoadView 一个自定义view可用来做加载view
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-18T20:40:27+08:00" content="2016-09-18">
-              2016-09-18
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/18/FruitLoadView-一个自定义view可用来做加载view/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/18/FruitLoadView-一个自定义view可用来做加载view/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/09/18/FruitLoadView-一个自定义view可用来做加载view/" class="leancloud_visitors" data-flag-title="FruitLoadView 一个自定义view可用来做加载view">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>闲暇时自己做得一个自定义view,后续如果还有时间的话再去增强功能。</p>
-<p><strong>Github地址：<a href="https://github.com/X-FAN/FruitLoadView">https://github.com/X-FAN/FruitLoadView</a></strong>  欢迎star<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/18/FruitLoadView-一个自定义view可用来做加载view/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/16/WebView进行post请求/" itemprop="url">
-                  WebView进行post请求
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-16T22:08:41+08:00" content="2016-09-16">
-              2016-09-16
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/16/WebView进行post请求/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/16/WebView进行post请求/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/09/16/WebView进行post请求/" class="leancloud_visitors" data-flag-title="WebView进行post请求">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>大多数情况下我们一般用WebView去加载一个界面就行了,但是有时候你想要进行post请求,比如你抓取到提交参数,想模拟一些pc端浏览器的请求,比如12306火车票.那要怎么做呢?</p>
-<p>抓取的参数如下:<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/16/WebView进行post请求/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
+  </div>
 
 
           </div>
@@ -796,6 +395,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/22/android平移动画闪烁问题/"
+           data-title="android平移动画闪烁问题" data-url="https://x-fan.github.io/2016/09/22/android平移动画闪烁问题/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -815,8 +422,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -859,6 +475,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -962,6 +589,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
